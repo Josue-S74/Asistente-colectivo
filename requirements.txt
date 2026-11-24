@@ -1,0 +1,5 @@
+# Dependencias necesarias para ejecutar la aplicación web.
+# streamlit crea la interfaz web, el estado de sesión y los componentes interactivos.
+streamlit>=1.37
+# scikit-learn entrena y usa el modelo TF-IDF + Regresión Logística del chatbot.
+scikit-learn>=1.4
