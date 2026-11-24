@@ -1,0 +1,30 @@
+name: Verificación del proyecto
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: python -m pip install --upgrade pip
+
+      - run: python -m pip install -r requirements.txt
+
+      - run: python -m py_compile Chatbot-Colectivos-Streamlit.py chatbot_nlp.py chatbot_nlp_nuevo.py
+
+      - run: |
+          python -m streamlit run Chatbot-Colectivos-Streamlit.py --server.headless true --browser.gatherUsageStats false --server.port 8501 &
+          sleep 8
+          curl --fail --silent --show-error http://localhost:8501/_stcore/health
+          kill %1 || true

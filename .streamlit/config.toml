@@ -1,0 +1,13 @@
+# Configuración visual de Streamlit para la aplicación de colectivos.
+[theme]
+base = "light"  # Usa el tema claro como base.
+primaryColor = "#1A5CFF"  # Color principal de botones y acentos.
+backgroundColor = "#FFFFFF"  # Color de fondo de la aplicación.
+secondaryBackgroundColor = "#F0F2F5"  # Color de fondo secundario de paneles.
+textColor = "#111B21"  # Color del texto principal.
+font = "Inter, Segoe UI, sans-serif"  # Tipografía general.
+headingFont = "Inter, Segoe UI, sans-serif"  # Tipografía de títulos.
+codeFont = "Consolas, monospace"  # Tipografía de fragments de código.
+baseRadius = "0.85rem"  # Radio de esquinas redondeadas.
+showWidgetBorder = true  # Muestra borde en los widgets.
+borderColor = "#D8E1F2"  # Color del borde de los widgets.
